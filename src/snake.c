@@ -4,11 +4,11 @@
 void add_tail(snake_t *snake) {
 
     if (snake->next == nullptr) {
-        snake_t *next = calloc(1, sizeof(snake_t));
+        snake_t *next = malloc(sizeof(snake_t));
         direction_t opposite = to_opposite(snake->direction);
-        int *position = calloc(2, sizeof(int));
-        position[0] = snake->pos[0];
-        position[1] = snake->pos[1];
+        position_t position = { 0, 0 };
+        position.x = snake->pos.x;
+        position.y = snake->pos.y;
         next->next = nullptr;
         next->prev = snake;
         next->pos = position;

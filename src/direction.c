@@ -1,32 +1,28 @@
 #include <direction.h>
+#include <position.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
 
-int* add_position(direction_t direction, const int position[], size_t size) {
+position_t add_position(direction_t direction, const position_t position, size_t size) {
 
-    if (size != 2) {
-        perror("Expected array of size 2 for position!");
-        return nullptr;
-    }
+    int32_t x_pos = position.x;
+    int32_t y_pos = position.y;
 
-    int x_pos = position[0];
-    int y_pos = position[1];
-
-    int *new_position = calloc(2, sizeof(int));
-    new_position[0] = 0;
-    new_position[1] = 0;
+    position_t new_position = { 0, 0 };
 
     switch (direction) {
         case UP:
-            new_position[1] = y_pos + 1;
+            new_position.y = y_pos + 1;
             break;
         case RIGHT:
-            new_position[0] = x_pos + 1;
+            new_position.x = x_pos + 1;
             break;
         case DOWN:
-            new_position[1] = y_pos - 1;
+            new_position.y = y_pos - 1;
             break;
         case LEFT:
-            new_position[0] = x_pos - 1;
+            new_position.x = x_pos - 1;
             break;
     }
     return new_position;
