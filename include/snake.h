@@ -2,8 +2,8 @@
 #ifndef SNAKE_C_SNAKE_H
 #define SNAKE_C_SNAKE_H
 
-#include <direction.h>
-#include <game_element.h>
+#include "direction.h"
+#include "game_element.h"
 
 typedef enum {
     NONE_COLLISION,
@@ -15,7 +15,7 @@ typedef struct snake {
     direction_t direction;
     struct snake *next;
     struct snake *prev;
-    int *pos;
+    position_t pos;
 } snake_t;
 
 void add_tail(snake_t *snake);

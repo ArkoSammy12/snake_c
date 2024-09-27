@@ -2,6 +2,7 @@
 #define SNAKE_C_DIRECTION_H
 
 #include <stdlib.h>
+#include "position.h"
 
 typedef enum {
     UP,
@@ -10,7 +11,12 @@ typedef enum {
     LEFT
 } direction_t;
 
-int* add_position(direction_t direction, const int position[], size_t size);
+typedef struct {
+    int32_t x;
+    int32_t y;
+} position_t;
+
+position_t add_position(direction_t direction, const position_t position, size_t size);
 
 direction_t to_opposite(direction_t direction);
 
