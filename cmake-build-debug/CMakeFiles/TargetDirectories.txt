@@ -1,0 +1,3 @@
+C:/Users/james/Desktop/Github_Local_Repos/snake_c/cmake-build-debug/CMakeFiles/snake_c.dir
+C:/Users/james/Desktop/Github_Local_Repos/snake_c/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/james/Desktop/Github_Local_Repos/snake_c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
